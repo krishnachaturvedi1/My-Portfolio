@@ -12,9 +12,9 @@ const projects = [
     features: ["Timetable View", "Announcements", "Basic Query Support", "Responsive UI"],
     techStack: ["HTML", "CSS", "JavaScript", "Python", "SQL"],
     achievement: "Runner Up – Tech Yuva 10.0",
-    image: "/placeholder.svg",
-    github: "#",
-    demo: "#",
+    image: "/public/Screenshot 2026-02-04 115043.png",
+    github: "https://github.com/krishnachaturvedi1/INCS--Intelligent-Campus-Assistant",
+    demo: "https://incaweb.netlify.app/",
   },
   {
     title: "Find My Worker",
@@ -27,9 +27,9 @@ const projects = [
       "Cloud deployment ready",
     ],
     techStack: ["Django", "PostgreSQL", "AWS S3", "Render", "Vercel"],
-    image: "/placeholder.svg",
-    github: "#",
-    demo: "#",
+    image: "/public/Screenshot 2026-02-05 092841.png",
+    github: "https://github.com/krishnachaturvedi1/Find-My-Worker?tab=readme-ov-file",
+    demo: "https://find-my-worker-fmy.vercel.app/",
   },
 ];
 
@@ -79,11 +79,12 @@ const Projects = () => {
                           <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
                           <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
                         </div>
-                        <div className="p-4 space-y-2">
-                          <div className="h-3 bg-muted rounded w-3/4" />
-                          <div className="h-3 bg-muted rounded w-1/2" />
-                          <div className="h-8 bg-primary/20 rounded mt-4" />
-                        </div>
+                        <img
+                           src={project.image}
+                           alt={project.title}
+                           className="w-full h-full object-cover"
+                            />
+
                       </div>
                     </motion.div>
                   </div>

@@ -16,8 +16,7 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
               className="text-muted-foreground text-sm flex items-center gap-1"
             >
-              © {currentYear} Krishna Chaturvedi. Built with
-              <Heart className="w-4 h-4 text-destructive fill-destructive" />
+              © {currentYear} Krishna Chaturvedi.
             </motion.p>
 
             {/* Social Links */}

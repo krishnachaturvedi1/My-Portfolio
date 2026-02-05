@@ -11,26 +11,26 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "krishna@example.com",
-    href: "mailto:krishna@example.com",
+    value: "chaturvedikrishna7652@gmail.com",
+    href: "mailto:chaturvedikrishna7652@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 XXXXX XXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    value: "+91 76520 28953",
+    href: "tel:+917652028953",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/krishna",
-    href: "https://linkedin.com/in/",
+    value: "krishna-chaturvedi-1",
+    href: "https://www.linkedin.com/in/krishna-chaturvedi-1ab79822a/",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/krishna",
-    href: "https://github.com/",
+    value: "krishnachaturvedi1",
+    href: "https://github.com/krishnachaturvedi1",
   },
 ];
 

@@ -79,7 +79,7 @@ const Hero = () => {
               className="btn-outline px-8 py-6 text-lg"
               asChild
             >
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1lAa9zBS5bVNdaZCux3J19PISaeUVQonT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <FileText className="mr-2 h-5 w-5" />
                 View Resume
               </a>

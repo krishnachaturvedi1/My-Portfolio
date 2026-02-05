@@ -50,7 +50,18 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            KC
+            <img
+              src="public\WhatsApp Image 2025-09-03 at 20.21.58_5adbba8f.jpg"   // put your image path here
+              alt="KC Logo"
+              className="h-9 md:h-11 w-auto
+                         rounded-full
+                         shadow-md
+                         hover:shadow-lg
+                         transition-shadow
+                         duration-300
+                         bg-white
+                         p-1"
+            />
           </motion.a>
 
           {/* Desktop Navigation */}
