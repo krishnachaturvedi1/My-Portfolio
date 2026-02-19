@@ -101,8 +101,8 @@ npm run preview
 Feel free to reach out if you'd like to collaborate or work together:
 
 - 📧 Email: chaturvedikrishna7652@gmail.com
-- 💼 LinkedIn: (https://www.linkedin.com/in/krishna-chaturvedi-1ab79822a/)
-- 🐙 GitHub: https://github.com/yourusername
+- 💼 LinkedIn: https://www.linkedin.com/in/krishna-chaturvedi-1ab79822a/
+- 🐙 GitHub: https://github.com/krishnachaturvedi1
 
 ---
 
@@ -113,3 +113,4 @@ This project is open source and available under the MIT License.
 ---
 
 ⭐ If you like this project, consider giving it a star!
+
