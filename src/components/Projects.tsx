@@ -3,8 +3,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Github, Calendar, Users, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
-import incaImg from "../assets/Screenshot-2026-02-04-115043.png";
-import findWorkerImg from "../assets/Screenshot-2026-02-05-092841.png";
 
 const projects = [
   {
@@ -14,7 +12,7 @@ const projects = [
     features: ["Timetable View", "Announcements", "Basic Query Support", "Responsive UI"],
     techStack: ["HTML", "CSS", "JavaScript", "Python", "SQL"],
     achievement: "Runner Up – Tech Yuva 10.0",
-    image: incaImg,
+    image: "/Screenshot 2026-02-04 115043.png",
     github: "https://github.com/krishnachaturvedi1/INCS--Intelligent-Campus-Assistant",
     demo: "https://incaweb.netlify.app/",
   },
@@ -29,7 +27,7 @@ const projects = [
       "Cloud deployment ready",
     ],
     techStack: ["Django", "PostgreSQL", "AWS S3", "Render", "Vercel"],
-    image: findWorkerImg,
+    image: "/Screenshot 2026-02-05 092841.png",
     github: "https://github.com/krishnachaturvedi1/Find-My-Worker?tab=readme-ov-file",
     demo: "https://find-my-worker-fmy.vercel.app/",
   },
