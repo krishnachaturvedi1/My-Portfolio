@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   {
@@ -41,20 +42,26 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
+    await emailjs.sendForm(
+      "service_3lw8fsq",
+      "template_62lt67r",
+      e.currentTarget,
+      "gOlqmRimQj4FsIqLm"
+    );
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
+    alert("Message sent successfully!");
+    e.currentTarget.reset();
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send message.");
+  }
 
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
-  };
+  setIsSubmitting(false);
+};
 
   return (
     <section id="contact" className="py-20 md:py-32 bg-secondary/30" ref={ref}>
