@@ -27,7 +27,7 @@ const Footer = () => {
               className="flex items-center gap-4"
             >
               <a
-                href="https://github.com/"
+                href="https://github.com/krishnachaturvedi1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
@@ -36,7 +36,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/in/"
+                href="www.linkedin.com/in/krishna-chaturvedi-1ab79822a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:krishna@example.com"
+                href="mailto: chaturvedikrishna7652@gmail.com"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                 aria-label="Email"
               >
