@@ -41,9 +41,9 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
   try {
     await emailjs.sendForm(
@@ -60,9 +60,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     alert("Failed to send message.");
   }
 
-  setIsSubmitting(false);
-};
-
+    setIsSubmitting(false);
+    (e.target as HTMLFormElement).reset();
+  };
 
   return (
     <section id="contact" className="py-20 md:py-32 bg-secondary/30" ref={ref}>
