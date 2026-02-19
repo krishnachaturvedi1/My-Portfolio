@@ -51,7 +51,7 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <img
-              src="public\WhatsApp Image 2025-09-03 at 20.21.58_5adbba8f.jpg"   // put your image path here
+              src="/WhatsApp Image 2025-09-03 at 20.21.58_5adbba8f.jpg"   // put your image path here
               alt="KC Logo"
               className="h-9 md:h-11 w-auto
                          rounded-full
