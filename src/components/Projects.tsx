@@ -31,7 +31,7 @@ const projects = [
     achievement: "High Accuracy NLP Pipeline",
     icon: MessageSquareCode,
     image: null,
-    github: "https://github.com/krishnachaturvedi1",
+    github: "https://github.com/krishnachaturvedi1/Spam-Detection",
     demo: null,
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     achievement: "Confidence Scoring & AI Matching",
     icon: SearchCheck,
     image: null,
-    github: "https://github.com/krishnachaturvedi1",
+    github: "https://github.com/krishnachaturvedi1/Ai-powered-lost-and-found",
     demo: null,
   },
   {
@@ -69,8 +69,8 @@ const projects = [
     achievement: "🏆 Runner-Up, Tech Yuva 10.0",
     icon: Compass,
     image: "/Screenshot 2026-02-04 115043.png",
-    github: "https://github.com/krishnachaturvedi1/INCS--Intelligent-Campus-Assistant",
-    demo: "https://incaweb.netlify.app/",
+    github: "https://github.com/krishnachaturvedi1/INCA",
+    // demo: "https://incaweb.netlify.app/",
   },
   {
     title: "Find My Worker",
@@ -88,8 +88,8 @@ const projects = [
     achievement: "Full-Stack Cloud Architecture",
     icon: ShieldCheck,
     image: "/Screenshot 2026-02-05 092841.png",
-    github: "https://github.com/krishnachaturvedi1/Find-My-Worker?tab=readme-ov-file",
-    demo: "https://find-my-worker-fmy.vercel.app/",
+    github: "https://github.com/krishnachaturvedi1/Find-My-Worker",
+    // demo: "https://find-my-worker-fmy.vercel.app/",
   },
 ];
 
@@ -132,31 +132,28 @@ const Projects = () => {
           >
             <button
               onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
-                filter === "all"
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${filter === "all"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80"
-              }`}
+                }`}
             >
               All Projects ({projects.length})
             </button>
             <button
               onClick={() => setFilter("ai")}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
-                filter === "ai"
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${filter === "ai"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80"
-              }`}
+                }`}
             >
               AI & Machine Learning
             </button>
             <button
               onClick={() => setFilter("web")}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
-                filter === "web"
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${filter === "web"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80"
-              }`}
+                }`}
             >
               Full-Stack Web
             </button>
