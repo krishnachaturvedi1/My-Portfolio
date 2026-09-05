@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Phone, Linkedin, Github, Send, MapPin } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Send, MapPin, Code2, Globe } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -22,15 +22,27 @@ const contactInfo = [
     href: "tel:+917652028953",
   },
   {
+    icon: MapPin,
+    label: "Location",
+    value: "Gorakhpur, U.P., India",
+    href: "https://maps.google.com/?q=Gorakhpur,+Uttar+Pradesh",
+  },
+  {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "krishna-chaturvedi-1",
+    value: "krishna-chaturvedi-1ab79822a",
     href: "https://www.linkedin.com/in/krishna-chaturvedi-1ab79822a/",
   },
   {
     icon: Github,
     label: "GitHub",
     value: "krishnachaturvedi1",
+    href: "https://github.com/krishnachaturvedi1",
+  },
+  {
+    icon: Code2,
+    label: "Coding Profiles",
+    value: "LeetCode & CodeChef",
     href: "https://github.com/krishnachaturvedi1",
   },
 ];
@@ -45,23 +57,31 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-  try {
-    await emailjs.sendForm(
-      "service_3lw8fsq",
-      "template_62lt67r",
-      e.currentTarget,
-      "gOlqmRimQj4FsIqLm"
-    );
+    const form = e.currentTarget;
 
-    alert("Message sent successfully!");
-    e.currentTarget.reset();
-  } catch (error) {
-    console.error(error);
-    alert("Failed to send message.");
-  }
+    try {
+      await emailjs.sendForm(
+        "service_3lw8fsq",
+        "template_62lt67r",
+        form,
+        "gOlqmRimQj4FsIqLm"
+      );
 
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I will get back to you promptly!",
+      });
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Could not send message automatically",
+        description: "Please write directly to chaturvedikrishna7652@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,53 +95,54 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
+            <span className="inline-block px-3.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-3">
+              Direct Communication
+            </span>
             <h2 className="section-heading">Get In Touch</h2>
             <p className="section-subheading mx-auto">
-              Have a project in mind or want to collaborate? Let's connect!
+              Interested in collaborating, discussing technical projects, or hiring for development & AI roles? Let's connect!
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-8"
+              className="lg:col-span-5 space-y-6"
             >
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Let's work together
+              <div className="glass-card rounded-2xl p-6 sm:p-8 border border-border/80 space-y-4">
+                <h3 className="text-xl font-bold text-foreground">
+                  Let's build something impactful
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  I'm always open to discussing new projects, creative ideas, or
-                  opportunities to be part of your visions. Feel free to reach out
-                  through any of the following channels.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  I'm actively looking for software development, full-stack, machine learning, and data engineering opportunities. I'm always open to discussing new ideas, tech stacks, or engineering challenges.
                 </p>
-              </div>
 
-              {/* Contact Links */}
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <motion.a
-                    key={info.label}
-                    href={info.href}
-                    target={info.label !== "Email" && info.label !== "Phone" ? "_blank" : undefined}
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                    className="flex items-center gap-4 p-4 glass-card rounded-xl hover:border-primary/30 transition-all group"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <info.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
-                      <p className="font-medium text-foreground">{info.value}</p>
-                    </div>
-                  </motion.a>
-                ))}
+                {/* Contact Links */}
+                <div className="space-y-3 pt-2">
+                  {contactInfo.map((info, index) => (
+                    <motion.a
+                      key={info.label}
+                      href={info.href}
+                      target={info.label !== "Email" && info.label !== "Phone" ? "_blank" : undefined}
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, x: -15 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.3, delay: 0.25 + index * 0.05 }}
+                      className="flex items-center gap-3.5 p-3.5 rounded-xl bg-background/60 hover:bg-primary/10 border border-border/60 hover:border-primary/40 transition-all group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+                        <info.icon className="w-5 h-5" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{info.label}</p>
+                        <p className="text-sm font-medium text-foreground truncate">{info.value}</p>
+                      </div>
+                    </motion.a>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
@@ -130,76 +151,77 @@ const Contact = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="lg:col-span-7"
             >
               <form
                 onSubmit={handleSubmit}
-                className="glass-card rounded-2xl p-6 md:p-8 space-y-6"
+                className="glass-card rounded-2xl p-6 sm:p-8 space-y-5 border border-border/80"
               >
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-foreground">
-                      Name
+                  <div className="space-y-1.5">
+                    <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-foreground">
+                      Full Name *
                     </label>
                     <Input
                       id="name"
                       name="name"
-                      placeholder="Your name"
+                      placeholder="e.g. Alex Johnson"
                       required
-                      className="bg-background/50"
+                      className="bg-background/70 border-border h-11"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-foreground">
-                      Email
+                  <div className="space-y-1.5">
+                    <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-foreground">
+                      Email Address *
                     </label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="your@email.com"
+                      placeholder="alex@example.com"
                       required
-                      className="bg-background/50"
+                      className="bg-background/70 border-border h-11"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium text-foreground">
-                    Subject
+                <div className="space-y-1.5">
+                  <label htmlFor="subject" className="text-xs font-semibold uppercase tracking-wider text-foreground">
+                    Subject *
                   </label>
                   <Input
                     id="subject"
                     name="subject"
-                    placeholder="What's this about?"
+                    placeholder="Project Inquiry / Job Opportunity / Collaboration"
                     required
-                    className="bg-background/50"
+                    className="bg-background/70 border-border h-11"
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-foreground">
-                    Message
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-foreground">
+                    Your Message *
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Your message..."
+                    placeholder="Share your goals, ideas, or questions here..."
                     rows={5}
                     required
-                    className="bg-background/50 resize-none"
+                    className="bg-background/70 border-border resize-none"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full btn-primary"
+                  className="w-full btn-primary h-12 text-base font-semibold shadow-md"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                      Sending...
+                      Sending Message...
                     </span>
                   ) : (
                     <span className="flex items-center gap-2">
@@ -218,3 +240,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

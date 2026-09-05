@@ -1,57 +1,65 @@
 import { motion } from "framer-motion";
-import { Heart, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Code2, Heart, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="py-8 border-t border-border">
+    <footer className="py-10 border-t border-border bg-background/80">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Copyright */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="text-muted-foreground text-sm flex items-center gap-1"
-            >
-              © {currentYear} Krishna Chaturvedi.
-            </motion.p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Left: Branding & Copyright */}
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+              <span className="font-bold text-foreground text-base">
+                Krishna<span className="text-primary">.dev</span>
+              </span>
+              <span className="hidden sm:inline text-border">|</span>
+              <p className="text-muted-foreground text-xs sm:text-sm">
+                © {currentYear} Krishna Chaturvedi • Built with React & Tailwind CSS
+              </p>
+            </div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-center gap-4"
-            >
+            {/* Right: Social Icons & Back to Top */}
+            <div className="flex items-center gap-3">
               <a
                 href="https://github.com/krishnachaturvedi1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                 aria-label="GitHub"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-4 h-4" />
               </a>
               <a
                 href="https://www.linkedin.com/in/krishna-chaturvedi-1ab79822a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="mailto: chaturvedikrishna7652@gmail.com"
-                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                href="mailto:chaturvedikrishna7652@gmail.com"
+                className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                 aria-label="Email"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4" />
               </a>
-            </motion.div>
+              <button
+                onClick={scrollToTop}
+                className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors ml-2"
+                aria-label="Back to Top"
+                title="Back to Top"
+              >
+                <ArrowUp className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -60,3 +68,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
