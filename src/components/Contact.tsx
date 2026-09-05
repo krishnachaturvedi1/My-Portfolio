@@ -30,7 +30,7 @@ const contactInfo = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "krishna-chaturvedi-1ab79822a",
+    value: "krishnachaturvedi1",
     href: "https://www.linkedin.com/in/krishnachaturvedi1/",
   },
   {
