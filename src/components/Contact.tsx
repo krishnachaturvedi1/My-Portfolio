@@ -31,7 +31,7 @@ const contactInfo = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "krishna-chaturvedi-1ab79822a",
-    href: "https://www.linkedin.com/in/krishna-chaturvedi-1ab79822a/",
+    href: "https://www.linkedin.com/in/krishnachaturvedi1/",
   },
   {
     icon: Github,
